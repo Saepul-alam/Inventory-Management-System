@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    background:#f4f6f9;
+}
+
+.sidebar{
+    min-height:100vh;
+}
+
+.sidebar .nav-link{
+    color:white;
+}
+
+.sidebar .nav-link:hover{
+    background:#0d6efd;
+}
+
+.card{
+    border:none;
+    border-radius:10px;
+}
+
+.table{
+    vertical-align:middle;
+}
+
+.btn{
+    border-radius:8px;
+}
+
+.content{
+    padding:20px;
+}
