@@ -1,180 +1,208 @@
-# Inventory Management System
+# 📦 Inventory Management System
 
-Sistem Inventory Management berbasis **Laravel 13** yang dikembangkan sebagai Technical Test PT Asietex Sinar Indopratama.
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-13-red?style=for-the-badge&logo=laravel">
+  <img src="https://img.shields.io/badge/PHP-8.3-blue?style=for-the-badge&logo=php">
+  <img src="https://img.shields.io/badge/MySQL-8-orange?style=for-the-badge&logo=mysql">
+  <img src="https://img.shields.io/badge/AdminLTE-3-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Bootstrap-5-purple?style=for-the-badge&logo=bootstrap">
+</p>
 
----
-
-# Fitur Aplikasi
-
-## 1. Authentication
-
-* Login
-* Logout
-* Register
-* Forgot Password
-
----
-
-## 2. Dashboard
-
-Dashboard menampilkan informasi secara ringkas mengenai:
-
-* Total Kategori
-* Total Produk
-* Total Transaksi
-* Total Penjualan
-* Produk dengan stok menipis
-* Daftar transaksi terbaru
+<p align="center">
+A web-based Inventory Management System built using Laravel that provides inventory, category, product, and sales transaction management with the implementation of Relational Database Management System (RDBMS).
+</p>
 
 ---
 
-## 3. Master Data
+## 📖 Overview
 
-### Kategori
-
-* Menambah kategori
-* Melihat daftar kategori
-* Mengubah kategori
-* Menghapus kategori
-* Pencarian kategori
-* Sorting data
-* Pagination
-
-### Produk
-
-* Menambah produk
-* Melihat daftar produk
-* Mengubah produk
-* Menghapus produk
-* Pencarian produk
-* Sorting data
-* Pagination
-
-Setiap produk memiliki relasi dengan kategori.
+Inventory Management System is a web application developed using the Laravel Framework to simplify inventory management processes. The system provides authentication, master data management, sales transaction processing, and automatic stock management through a relational database structure.
 
 ---
 
-## 4. Transaksi Penjualan
+## ✨ Features
 
-* Menambah transaksi
-* Melihat daftar transaksi
-* Melihat detail transaksi
-* Mengubah transaksi
-* Menghapus transaksi
+### 🔐 Authentication
 
-Fitur transaksi mendukung:
-
-* Multi produk dalam satu transaksi
-* Perhitungan subtotal otomatis
-* Perhitungan total otomatis
-* Pengurangan stok otomatis
-* Pengembalian stok ketika transaksi dihapus
-* Relasi dengan tabel produk
+- Login
+- Register
+- Forgot Password
+- Logout
 
 ---
 
-# Teknologi yang Digunakan
+### 📂 Category Management
 
-* Laravel 13
-* PHP 8.3
-* MySQL
-* Laravel Breeze Authentication
-* AdminLTE
-* Bootstrap 5
-* Blade Template
-* Eloquent ORM
+- Create Category
+- View Category
+- Update Category
+- Delete Category
+- Search Category
+- Pagination
 
 ---
 
-# Konsep Database
+### 📦 Product Management
 
-Aplikasi menggunakan konsep **Relational Database Management System (RDBMS)**.
+- Create Product
+- View Product
+- Update Product
+- Delete Product
+- Search Product
+- Pagination
 
-Relasi database:
-
-Kategori
-
-↓
-
-Produk
-
-↓
-
-Detail Penjualan
-
-↓
-
-Penjualan
+Each product belongs to a category.
 
 ---
 
-# Struktur Database
+### 💰 Sales Management
 
-## kategoris
+- Create Sales Transaction
+- View Sales Transaction
+- View Transaction Details
+- Update Sales Transaction
+- Delete Sales Transaction
 
-* id
-* nama_kategori
-* timestamps
+Features include:
 
-## produks
-
-* id
-* kategori_id
-* kode_produk
-* nama_produk
-* harga
-* stok
-* timestamps
-
-## penjualans
-
-* id
-* nomor_transaksi
-* tanggal
-* total
-* timestamps
-
-## detail_penjualans
-
-* id
-* penjualan_id
-* produk_id
-* harga
-* jumlah
-* subtotal
-* timestamps
+- Multiple products in one transaction
+- Automatic subtotal calculation
+- Automatic total calculation
+- Automatic stock deduction
+- Automatic stock restoration
+- Transaction history
 
 ---
 
-# Cara Instalasi
+### 📊 Dashboard
 
-## 1. Clone Project
+Dashboard provides summary information including:
 
-```bash
-git clone <repository-url>
+- Total Categories
+- Total Products
+- Total Transactions
+- Total Sales
+- Low Stock Products
+- Recent Transactions
+
+---
+
+# 🗄 Database Design
+
+The application implements the Relational Database Management System (RDBMS) concept.
+
 ```
-
-atau ekstrak file project ke dalam folder web server.
-
----
-
-## 2. Masuk ke folder project
-
-```bash
-cd inventory-management
+Categories
+      │
+      │ 1
+      ▼
+Products
+      │
+      │ 1
+      ▼
+Sales Details
+      ▲
+      │
+      │ n
+Sales
 ```
 
 ---
 
-## 3. Install Dependency PHP
+## 📁 Database Tables
+
+### Categories
+
+- id
+- nama_kategori
+- created_at
+- updated_at
+
+### Products
+
+- id
+- kategori_id
+- kode_produk
+- nama_produk
+- harga
+- stok
+- created_at
+- updated_at
+
+### Sales
+
+- id
+- nomor_transaksi
+- tanggal
+- total
+- created_at
+- updated_at
+
+### Sales Details
+
+- id
+- penjualan_id
+- produk_id
+- harga
+- jumlah
+- subtotal
+- created_at
+- updated_at
+
+---
+
+# 🛠 Technology Stack
+
+- Laravel 13
+- PHP 8.3
+- MySQL
+- Bootstrap 5
+- AdminLTE 3
+- Laravel Breeze
+- Blade Template Engine
+- Eloquent ORM
+- Vite
+
+---
+
+# 📂 Project Structure
+
+```
+app/
+bootstrap/
+config/
+database/
+public/
+resources/
+routes/
+storage/
+```
+
+---
+
+# 🚀 Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Saepul-alam/Inventory-Management-System.git
+```
+
+---
+
+## Go to Project
+
+```bash
+cd Inventory-Management-System
+```
+
+---
+
+## Install Dependencies
 
 ```bash
 composer install
 ```
-
----
-
-## 4. Install Dependency Frontend
 
 ```bash
 npm install
@@ -182,15 +210,23 @@ npm install
 
 ---
 
-## 5. Salin File Environment
+## Copy Environment File
+
+Linux / macOS
 
 ```bash
 cp .env.example .env
 ```
 
+Windows
+
+```bash
+copy .env.example .env
+```
+
 ---
 
-## 6. Generate Application Key
+## Generate Application Key
 
 ```bash
 php artisan key:generate
@@ -198,9 +234,9 @@ php artisan key:generate
 
 ---
 
-## 7. Konfigurasi Database
+## Configure Database
 
-Ubah file `.env`
+Edit the `.env` file.
 
 ```env
 DB_CONNECTION=mysql
@@ -211,49 +247,39 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Sesuaikan dengan konfigurasi MySQL yang digunakan.
-
 ---
 
-## 8. Jalankan Migration dan Seeder
+## Run Migration and Seeder
 
 ```bash
 php artisan migrate:fresh --seed
 ```
 
-Perintah tersebut akan membuat:
-
-* User
-* Kategori
-* Produk
-* Penjualan
-* Detail Penjualan
-
-beserta data dummy.
-
 ---
 
-## 9. Build Asset
+## Build Assets
 
-```bash
-npm run build
-```
-
-atau saat development
+Development
 
 ```bash
 npm run dev
 ```
 
+Production
+
+```bash
+npm run build
+```
+
 ---
 
-## 10. Jalankan Server
+## Run Application
 
 ```bash
 php artisan serve
 ```
 
-Buka browser:
+Open your browser:
 
 ```
 http://127.0.0.1:8000
@@ -261,14 +287,12 @@ http://127.0.0.1:8000
 
 ---
 
-# Login Default
-
-Administrator
+# 👤 Default Account
 
 Email
 
 ```
-admin@inventory.com
+admin@example,com
 ```
 
 Password
@@ -277,40 +301,63 @@ Password
 password
 ```
 
-> Sesuaikan apabila data pada UserSeeder berbeda.
+> Adjust according to the credentials defined in `UserSeeder`.
 
 ---
 
-# Seeder
+# 🌱 Seeder
 
-Seeder menghasilkan data contoh seperti:
+The application includes seeders to generate sample data for testing purposes.
 
-* 10 Kategori
-* 100 Produk
-* 200 Penjualan
-* Ratusan Detail Penjualan
+Generated data includes:
 
-Sehingga aplikasi siap digunakan untuk demonstrasi.
-
----
-
-# Fitur RDBMS
-
-Aplikasi menerapkan relasi:
-
-* One to Many
-* Foreign Key
-* Constraint
-* Cascade Update
-* Restrict Delete
+- Categories
+- Products
+- Sales Transactions
+- Sales Transaction Details
 
 ---
 
-# Author
+# 📋 Main Modules
 
-Technical Test
+- Authentication
+- Dashboard
+- Category Management
+- Product Management
+- Sales Management
+- Sales Detail
+- Inventory Control
+- Search
+- Pagination
 
-PT Asietex Sinar Indopratama
+---
 
-Developed using Laravel Framework.
-# Inventory-Management-System
+# 🎯 Learning Objectives
+
+This project demonstrates the implementation of:
+
+- Laravel Framework
+- Authentication
+- CRUD Operations
+- MVC Architecture
+- Relational Database Management System (RDBMS)
+- Database Relationships
+- Eloquent ORM
+- Transaction Management
+- Stock Management
+- Clean Code Principles
+
+---
+
+# 📄 License
+
+This project is intended for educational purposes.
+
+---
+
+# 👨‍💻 Author
+
+**Saepul Alam**
+
+GitHub:
+https://github.com/Saepul-alam
